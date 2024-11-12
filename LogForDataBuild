@@ -1,0 +1,1936 @@
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA.
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7)
+      Licensed to UNIVERSITY OF PITTSBURGH - SFA T&R, Site 70082163.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/OR 15.2
+      SAS/IML 15.2
+      SAS/QC 15.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS initialization used:
+      real time           2.17 seconds
+      cpu time            1.14 seconds
+
+1    ods pdf file='C:\Users\PWS5\OneDrive - University of
+1  ! Pittsburgh\Desktop\SleepHUB\R3\logDataBuild.pdf' style=journal;
+NOTE: Writing ODS PDF output to DISK destination
+      "C:\Users\PWS5\OneDrive - University of Pittsburgh\Desktop\SleepHUB\R3\logDataBuild.pdf",
+      printer "PDF".
+2    *set up demographic file;
+3    PROC IMPORT OUT= WORK.demogin
+4                DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+5    \Desktop\SleepHUB\R3\demographics.xlsx"
+6                DBMS=EXCEL REPLACE;
+7         RANGE="R3_3415_LUYSTER_DEMOGRAPHICS_20$";
+8         GETNAMES=YES;
+9         MIXED=NO;
+10        SCANTEXT=YES;
+11        USEDATE=YES;
+12        SCANTIME=YES;
+13   RUN;
+
+NOTE: WORK.DEMOGIN data set was successfully created.
+NOTE: The data set WORK.DEMOGIN has 107008 observations and 8 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           3.56 seconds
+      cpu time            3.46 seconds
+
+
+14   /*
+15   *for random pull;
+16   proc surveyselect data=demogin
+17       out=demog
+18       seed=265325
+19       samprate=0.1;
+20   run;
+21   */
+22   data demog;
+23   set demogin;
+24     setdate='23aug2022 09:00:00'dt;
+25     format setdate DATE9.;
+26     setdate=datepart(setdate);
+27     ID=input(STUDY_ID,12.);
+28   run;
+
+NOTE: Numeric values have been converted to character values at the places given by:
+      (Line):(Column).
+      27:12
+NOTE: There were 107008 observations read from the data set WORK.DEMOGIN.
+NOTE: The data set WORK.DEMOG has 107008 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.17 seconds
+      cpu time            0.03 seconds
+
+
+29   /*data demog;
+30   set demog;
+31   drop STUDY_ID;
+32   run;
+33
+34   data demog;
+35   set demog(rename=(ID=STUDY_ID));
+36   run;
+37   */
+38
+39   data demog;
+40   set demog;
+41
+42   if DEATH_DATE=. then Age=(setdate-BIRTH_DATE)/365.2425;
+43   if DEATH_DATE~= . then Age=(DEATH_DATE-BIRTH_DATE)/365.2425;
+44
+45   if DEATH_DATE=. then Event=0;
+46   if DEATH_DATE~= . then Event=1;
+47
+48   if DEATH_DATE=. then SurvTime=.;
+49   if DEATH_DATE~= . then SurvTime=Age;
+50
+51   run;
+
+NOTE: There were 107008 observations read from the data set WORK.DEMOG.
+NOTE: The data set WORK.DEMOG has 107008 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+
+
+52
+53
+54   *set up diagnoses file;
+55   PROC IMPORT OUT= WORK.Diagnoses
+56               DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+57   \Desktop\SleepHUB\R3\R3_3583_ENGLISH_DIAGNOSES_2022_08_18.csv"
+58               DBMS=CSV REPLACE;
+59        GETNAMES=YES;
+60        DATAROW=2;
+61   RUN;
+
+62    /**********************************************************************
+63    *   PRODUCT:   SAS
+64    *   VERSION:   9.4
+65    *   CREATOR:   External File Interface
+66    *   DATE:      11NOV24
+67    *   DESC:      Generated SAS Datastep Code
+68    *   TEMPLATE SOURCE:  (None Specified.)
+69    ***********************************************************************/
+70       data WORK.DIAGNOSES    ;
+71       %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+72       infile 'C:\Users\PWS5\OneDrive - University of
+72 ! Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_DIAGNOSES_2022_08_18.csv' delimiter = ','
+72 ! MISSOVER DSD lrecl=32767 firstobs=2 ;
+73          informat STUDY_ID $12. ;
+74          informat DIAGNOSIS_TYPE $8. ;
+75          informat DX_CODE $8. ;
+76          informat DIAGNOSIS_NAME $188. ;
+77          informat PRIMARY_DX_IND $3. ;
+78          informat DX_FROM_DATE mmddyy10. ;
+79          informat DX_TO_DATE mmddyy10. ;
+80          format STUDY_ID $12. ;
+81          format DIAGNOSIS_TYPE $8. ;
+82          format DX_CODE $8. ;
+83          format DIAGNOSIS_NAME $188. ;
+84          format PRIMARY_DX_IND $3. ;
+85          format DX_FROM_DATE mmddyy10. ;
+86          format DX_TO_DATE mmddyy10. ;
+87       input
+88                   STUDY_ID  $
+89                   DIAGNOSIS_TYPE  $
+90                   DX_CODE  $
+91                   DIAGNOSIS_NAME  $
+92                   PRIMARY_DX_IND  $
+93                   DX_FROM_DATE
+94                   DX_TO_DATE
+95       ;
+96       if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+97       run;
+
+NOTE: The infile 'C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_DIAGNOSES_2022_08_18.csv' is:
+
+      Filename=C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_DIAGNOSES_2022_08_18.csv,
+      RECFM=V,LRECL=32767,
+      File Size (bytes)=3054047856,
+      Last Modified=20Oct2022:12:42:34,
+      Create Time=18Aug2022:12:24:00
+
+NOTE: 32893597 records were read from the infile 'C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_DIAGNOSES_2022_08_18.csv'.
+      The minimum record length was 42.
+      The maximum record length was 275.
+NOTE: The data set WORK.DIAGNOSES has 32893597 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           23.73 seconds
+      cpu time            23.20 seconds
+
+
+32893597 rows created in WORK.DIAGNOSES from C:\Users\PWS5\OneDrive - University of
+Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_DIAGNOSES_2022_08_18.csv.
+
+
+
+NOTE: WORK.DIAGNOSES data set was successfully created.
+NOTE: The data set WORK.DIAGNOSES has 32893597 observations and 7 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           24.15 seconds
+      cpu time            23.25 seconds
+
+
+98
+99   data diagnoses;
+100  set diagnoses;
+101  ID=input(STUDY_ID,12.);
+102  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.DIAGNOSES.
+NOTE: The data set WORK.DIAGNOSES has 32893597 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           7.42 seconds
+      cpu time            7.25 seconds
+
+
+103  data diagnoses;
+104  set diagnoses;
+105  drop STUDY_ID;
+106  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.DIAGNOSES.
+NOTE: The data set WORK.DIAGNOSES has 32893597 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           6.75 seconds
+      cpu time            6.15 seconds
+
+
+107  *merge demog and diagn files;
+108  proc sort data=demog;
+109  by ID;
+110  run;
+
+NOTE: There were 107008 observations read from the data set WORK.DEMOG.
+NOTE: The data set WORK.DEMOG has 107008 observations and 13 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+
+
+111  proc sort data=diagnoses;
+112  by ID;
+113  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.DIAGNOSES.
+NOTE: The data set WORK.DIAGNOSES has 32893597 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           12.67 seconds
+      cpu time            25.46 seconds
+
+
+114
+115  /*data demodiag;
+116  merge diagnoses (in=in_diag) demog (in=in_demog);
+117  by STUDY_ID;
+118  if in_demo=1 & in_diag=1;
+119  run;
+120  proc sql;
+121    create table merp0 as
+122    select  *
+123    from demog, diagnoses
+124    where demog.STUDY_ID=diagnoses.STUDY_ID;
+125  quit;*/
+126  /*
+127  PROC SQL;
+128  Create table dummy as
+129  Select * from work.demog as x left join work.diagnoses as y
+130  On x.STUDY_ID = y.STUDY_ID;
+131  Quit;
+132  */
+133
+134  data res6; *res;    *<<---NOTE: THIS NAME HAS BEEN ALTERED SINCE FOLLOWING DATA STEPS ARE
+134! BLOCKED OUT THE ORIGINAL NAME SHOULD BE "res";
+135     merge diagnoses (in=in_diag) demog (in=in_demog);
+136     by ID;
+137     if in_demog=1 & in_diag=1;
+138  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.DIAGNOSES.
+NOTE: There were 107008 observations read from the data set WORK.DEMOG.
+NOTE: The data set WORK.RES6 has 32893597 observations and 19 variables.
+NOTE: DATA statement used (Total process time):
+      real time           8.85 seconds
+      cpu time            8.42 seconds
+
+
+139  /*
+140  *bring in encounters;
+141  PROC IMPORT OUT= WORK.encounters
+142              DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+143  \Desktop\SleepHUB\R3\R3_3583_ENGLISH_ENCOUNTERS_2022_08_18.csv"
+144              DBMS=CSV REPLACE;
+145       GETNAMES=YES;
+146       DATAROW=2;
+147  RUN;
+148
+149  data encounters;
+150  set encounters;
+151  ID=input(STUDY_ID,12.);
+152  run;
+153  data encounters;
+154  set encounters;
+155  drop STUDY_ID;
+156  run;
+157  *merge demog and diagn files;
+158  proc sort data=res;
+159  by ID;
+160  run;
+161  proc sort data=encounters;
+162  by ID;
+163  run;
+164
+165  data res2;
+166     merge encounters (in=in_enc) res (in=in_res);
+167     by ID;
+168     if in_res=1 & in_enc=1;
+169  run;
+170
+171  *bring in med fills;
+172  PROC IMPORT OUT= WORK.medfills
+173              DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+174  \Desktop\SleepHUB\R3\R3_3415_LUYSTER_MED_FILLS_2022_08_18.csv"
+175              DBMS=CSV REPLACE;
+176       GETNAMES=YES;
+177       DATAROW=2;
+178  RUN;
+179
+180  data medfills;
+181  set medfills;
+182  ID=input(STUDY_ID,12.);
+183  run;
+184  data medfills;
+185  set medfills;
+186  drop STUDY_ID;
+187  run;
+188  *merge  files;
+189  proc sort data=res2;
+190  by ID;
+191  run;
+192  proc sort data=medfills;
+193  by ID;
+194  run;
+195
+196  data res3;
+197     merge medfills (in=in_medf) res2 (in=in_res2);
+198     by ID;
+199     if in_res2=1 & in_medf=1;
+200  run;
+201
+202  *bring in med orders;
+203  PROC IMPORT OUT= WORK.medords
+204              DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+205  \Desktop\SleepHUB\R3\R3_3583_ENGLISH_MED_ORDERS_2022_08_18.csv"
+206              DBMS=CSV REPLACE;
+207       GETNAMES=YES;
+208       DATAROW=2;
+209  RUN;
+210
+211  data medords;
+212  set medords
+213  (rename=(
+214      QUANTITY=OrderQuantity
+215      START_DATE=OrderStart_Date
+216      END_DATE=OrderEnd_Date
+217      MED_UNIT=OrderMed_Unit)
+218      )
+219  ;
+220  ID=input(STUDY_ID,12.);
+221  run;
+222  data medords;
+223  set medords;
+224  drop STUDY_ID;
+225  run;
+226  *merge  files;
+227  proc sort data=res3;
+228  by ID;
+229  run;
+230  proc sort data=medords;
+231  by ID;
+232  run;
+233
+234  data res4;
+235     merge medords (in=in_medo) res3 (in=in_res3);
+236     by ID;
+237     if in_res3=1 & in_medo=1;
+238  run;
+239
+240
+241  *bring in proc orders;
+242  PROC IMPORT OUT= WORK.procords
+243              DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+244  \Desktop\SleepHUB\R3\R3_3583_ENGLISH_PROC_ORDERS_2022_08_18.csv"
+245              DBMS=CSV REPLACE;
+246       GETNAMES=YES;
+247       DATAROW=2;
+248  RUN;
+249
+250  data procords;
+251  set procords;
+252  ID=input(STUDY_ID,12.);
+253  run;
+254  data procords;
+255  set procords;
+256  drop STUDY_ID;
+257  run;
+258  *merge  files;
+259  proc sort data=res4;
+260  by ID;
+261  run;
+262  proc sort data=procords;
+263  by ID;
+264  run;
+265
+266  data res5;
+267     merge procords (in=in_proco) res4 (in=in_res4);
+268     by ID;
+269     if in_res4=1 & in_proco=1;
+270  run;
+271
+272
+273  *bring in proc preform;
+274  PROC IMPORT OUT= WORK.procperf
+275              DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+276  \Desktop\SleepHUB\R3\R3_3583_ENGLISH_PROCS_PERFORMED_2022_08_18.csv"
+277              DBMS=CSV REPLACE;
+278       GETNAMES=YES;
+279       DATAROW=2;
+280  RUN;
+281
+282  data procperf;
+283  set procperf
+284  (rename=(PROC_NAME=ProcPerformed_Name))
+285  ;
+286  ID=input(STUDY_ID,12.);
+287  run;
+288  data procperf;
+289  set procperf;
+290  drop STUDY_ID;
+291  run;
+292  *merge  files;
+293  proc sort data=res5;
+294  by ID;
+295  run;
+296  proc sort data=procperf;
+297  by ID;
+298  run;
+299
+300  data res6;
+301     merge procperf (in=in_procp) res5 (in=in_res5);
+302     by ID;
+303     if in_res5=1 & in_procp=1;
+304  run;
+305  */
+306
+307  proc sort data=res6;
+308  by ID DX_FROM_DATE;run;
+
+NOTE: There were 32893597 observations read from the data set WORK.RES6.
+NOTE: The data set WORK.RES6 has 32893597 observations and 19 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           16.95 seconds
+      cpu time            29.78 seconds
+
+
+309  data intermed1;
+310  set res6;
+311  by ID;
+312  DXdate1=first.ID;
+313  DXdateT=last.ID;
+314  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.RES6.
+NOTE: The data set WORK.INTERMED1 has 32893597 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           9.26 seconds
+      cpu time            9.07 seconds
+
+
+315  proc sort data=intermed1;
+316  by ID DX_FROM_DATE descending DXdate1;
+317  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.INTERMED1.
+NOTE: The data set WORK.INTERMED1 has 32893597 observations and 21 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           17.48 seconds
+      cpu time            32.60 seconds
+
+
+318  data intermed2;
+319  set intermed1;
+320  if DXdate1=1 then firD=DX_FROM_DATE;
+321  else firD=.;
+322  if DXdateT=1 then finD=DX_FROM_DATE;
+323  else finD=.;
+324  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.INTERMED1.
+NOTE: The data set WORK.INTERMED2 has 32893597 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           9.35 seconds
+      cpu time            8.56 seconds
+
+
+325  data intermed3;
+326    drop temp;
+327    set intermed2;
+328    by ID;
+329    /* RETAIN the new variable */
+330    retain temp;
+331    /* Reset TEMP when the BY-Group changes */
+332    if first.ID then temp=.;
+333    /* Assign TEMP when X is non-missing */
+334    if firD ~= . then temp=firD;
+335    /* When X is missing, assign the retained value of TEMP into X */
+336    else if firD=. then firD=temp;
+337  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.INTERMED2.
+NOTE: The data set WORK.INTERMED3 has 32893597 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           10.59 seconds
+      cpu time            9.92 seconds
+
+
+338
+339  proc sort data=intermed3;
+340  by ID descending DX_FROM_DATE descending DXdateT;
+341  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.INTERMED3.
+NOTE: The data set WORK.INTERMED3 has 32893597 observations and 23 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           16.74 seconds
+      cpu time            32.37 seconds
+
+
+342  data intermed4;
+343    drop temp;
+344    set intermed3;
+345    by ID;
+346    /* RETAIN the new variable */
+347    retain temp;
+348    /* Reset TEMP when the BY-Group changes */
+349    if first.ID then temp=.;
+350    /* Assign TEMP when X is non-missing */
+351    if finD ~= . then temp=finD;
+352    /* When X is missing, assign the retained value of TEMP into X */
+353    else if finD=. then finD=temp;
+354  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.INTERMED3.
+NOTE: The data set WORK.INTERMED4 has 32893597 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           10.54 seconds
+      cpu time            9.78 seconds
+
+
+355
+356  data datdif;
+357  set intermed4;
+358  YRinter=(finD-firD)/365.2425;
+359  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.INTERMED4.
+NOTE: The data set WORK.DATDIF has 32893597 observations and 24 variables.
+NOTE: DATA statement used (Total process time):
+      real time           19.42 seconds
+      cpu time            9.23 seconds
+
+
+360
+361  data rec4_2yrs;
+362  set datdif;
+363  if YRinter>=2;
+364  run;
+
+NOTE: There were 32893597 observations read from the data set WORK.DATDIF.
+NOTE: The data set WORK.REC4_2YRS has 32587381 observations and 24 variables.
+NOTE: DATA statement used (Total process time):
+      real time           22.08 seconds
+      cpu time            8.21 seconds
+
+
+365
+366  data rec4_5yrs;
+367  set rec4_2yrs;
+368  if YRinter>=5;
+369  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.REC4_2YRS.
+NOTE: The data set WORK.REC4_5YRS has 30507571 observations and 24 variables.
+NOTE: DATA statement used (Total process time):
+      real time           21.55 seconds
+      cpu time            7.82 seconds
+
+
+370
+371  proc means data=rec4_5yrs;
+372  var YRinter;
+373  run;
+
+NOTE: Writing HTML Body file: sashtml.htm
+NOTE: There were 30507571 observations read from the data set WORK.REC4_5YRS.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           10.91 seconds
+      cpu time            6.61 seconds
+
+
+374
+375  data depr;
+376  set rec4_2yrs;
+377  if(
+378  (DIAGNOSIS_TYPE="ICD10CM" &
+379  (DX_CODE="F32.0" |
+380  DX_CODE="F32.1" |
+381  DX_CODE="F32.2" |
+382  DX_CODE="F32.3" |
+383  DX_CODE="F32.4" |
+384  DX_CODE="F32.5" |
+385  DX_CODE="F32.9" |
+386  DX_CODE="F33.0" |
+387  DX_CODE="F33.1" |
+388  DX_CODE="F33.2" |
+389  DX_CODE="F33.3" |
+390  DX_CODE="F33.41" |
+391  DX_CODE="F33.42" |
+392  DX_CODE="F33.9" |
+393  DX_CODE="F34.1" )
+394  )
+395  |
+396  (DIAGNOSIS_TYPE="ICD9CM" &
+397  (DX_CODE="296.20" |
+398  DX_CODE="296.21" |
+399  DX_CODE="296.22" |
+400  DX_CODE="296.23" |
+401  DX_CODE="296.24" |
+402  DX_CODE="296.25" |
+403  DX_CODE="296.26" |
+404  DX_CODE="296.30" |
+405  DX_CODE="296.31" |
+406  DX_CODE="296.32" |
+407  DX_CODE="296.33" |
+408  DX_CODE="296.34" |
+409  DX_CODE="296.35" |
+410  DX_CODE="296.36" |
+411  DX_CODE="296.50" |
+412  DX_CODE="296.51" |
+413  DX_CODE="296.52" |
+414  DX_CODE="296.53" |
+415  DX_CODE="296.54" |
+416  DX_CODE="296.55" |
+417  DX_CODE="296.56" |
+418  DX_CODE="300.4" |
+419  DX_CODE="311") )
+420  )
+421  then DEPRIND=1;
+422  else DEPRIND=0;
+423  RUN;
+
+NOTE: There were 32587381 observations read from the data set WORK.REC4_2YRS.
+NOTE: The data set WORK.DEPR has 32587381 observations and 25 variables.
+NOTE: DATA statement used (Total process time):
+      real time           10.85 seconds
+      cpu time            10.78 seconds
+
+
+424
+425
+426  data addInDiag;
+427  set depr;
+428  if(
+429  (DIAGNOSIS_TYPE="ICD10CM" &
+430   DX_CODE="G47.33" )
+431  |
+432  (DIAGNOSIS_TYPE="ICD9CM" &
+433  DX_CODE="327.23" )
+434  )
+435  then OSAIND=1;
+436  else OSAIND=0;
+437  if(
+438  (DIAGNOSIS_TYPE="ICD10CM" &
+439   (DX_CODE="F51.01"|
+440   DX_CODE="F51.02"|
+441   DX_CODE="F51.03"|
+442   DX_CODE="F51.04"|
+443   DX_CODE="F51.05"|
+444   DX_CODE="F51.09"|
+445   DX_CODE="F51.12"|
+446   DX_CODE="F51.9"|
+447   DX_CODE="G47.00"|
+448   DX_CODE="G47.01"|
+449   DX_CODE="G47.09"|
+450   DX_CODE="Z72.82")
+451  )
+452  |
+453  (DIAGNOSIS_TYPE="ICD9CM" &
+454  (DX_CODE="307.40"|
+455  DX_CODE="307.41"|
+456  DX_CODE="307.42"|
+457  DX_CODE="327.00"|
+458  DX_CODE="327.01"|
+459  DX_CODE="327.02"|
+460  DX_CODE="327.09"|
+461  DX_CODE="780.51"|
+462  DX_CODE="780.52"|
+463  DX_CODE="V69.4"|
+464   DX_CODE="V69.5") )
+465  )
+466  then INSIND=1;
+467  else INSIND=0;
+468
+469  if(
+470  (DIAGNOSIS_TYPE="ICD10CM" &
+471   DX_CODE="Z72.0")
+472  |
+473  (DIAGNOSIS_TYPE="ICD9CM" &
+474  DX_CODE="305.1" )
+475  )
+476  then CurrSmoke=1;
+477  else CurrSmoke=0;
+478
+479  if(
+480  (DIAGNOSIS_TYPE="ICD10CM" &
+481   DX_CODE="Z87.891")
+482  |
+483  (DIAGNOSIS_TYPE="ICD9CM" &
+484  DX_CODE="V15.85") )
+485  then FormSmoke=1;
+486  else FormSmoke=0;
+487
+488  if(
+489  (DIAGNOSIS_TYPE="ICD10CM" &
+490   (DX_CODE="E78.0"|
+491    DX_CODE="E78.1"|
+492  DX_CODE="E78.2"|
+493  DX_CODE="E78.3"|
+494  DX_CODE="E78.4"|
+495  DX_CODE="E78.5"))
+496  |
+497  (DIAGNOSIS_TYPE="ICD9CM" &
+498  (DX_CODE="272.0"|
+499  DX_CODE="272.1"|
+500  DX_CODE="272.2"|
+501  DX_CODE="272.3"|
+502  DX_CODE="272.4"))
+503  )
+504  then HypLip=1;
+505  else HypLip=0;
+506  RUN;
+
+NOTE: There were 32587381 observations read from the data set WORK.DEPR.
+NOTE: The data set WORK.ADDINDIAG has 32587381 observations and 30 variables.
+NOTE: DATA statement used (Total process time):
+      real time           25.63 seconds
+      cpu time            13.20 seconds
+
+
+507
+508  data inPrep;
+509  set addInDiag;
+510  Code1 = scan(DX_CODE,1,'.');
+511  Code2 = input(scan(DX_CODE,2,'.'),12.);
+512  run;
+
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10 DX_CODE=F32.A DIAGNOSIS_NAME=Anxiety and depression PRIMARY_DX_IND=N
+DX_FROM_DATE=10/08/2021 DX_TO_DATE=. ID=4991999819 STUDY_ID=4991999819 BIRTH_DATE=14AUG1988
+DEATH_DATE=. GENDER=FEMALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO MARITAL_STATUS=MARRIED
+ZIP_CODE=15001 setdate=23AUG2022 Age=34.023970376 Event=0 SurvTime=. DXdate1=0 DXdateT=0
+firD=21727 finD=22602 YRinter=2.3956686311 DEPRIND=0 OSAIND=0 INSIND=0 CurrSmoke=0 FormSmoke=0
+HypLip=0 Code1=F32 Code2=. _ERROR_=1 _N_=31
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10 DX_CODE=F32.A DIAGNOSIS_NAME=Depression, unspecified depression type
+PRIMARY_DX_IND=N DX_FROM_DATE=09/24/2021 DX_TO_DATE=. ID=4991999819 STUDY_ID=4991999819
+BIRTH_DATE=14AUG1988 DEATH_DATE=. GENDER=FEMALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=15001 setdate=23AUG2022 Age=34.023970376 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21727 finD=22602 YRinter=2.3956686311 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=F32 Code2=. _ERROR_=1 _N_=50
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S86.912A
+DIAGNOSIS_NAME=Strain of unspecified muscle(s) and tendon(s) at lower leg level, left leg, initial
+ encounter PRIMARY_DX_IND=N DX_FROM_DATE=10/28/2021 DX_TO_DATE=10/29/2021 ID=4993002088
+STUDY_ID=4993002088 BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE
+ETHNICITY=NOT HISPANIC OR LATINO MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022
+Age=56.206492946 Event=0 SurvTime=. DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153
+DEPRIND=0 OSAIND=0 INSIND=0 CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S86 Code2=. _ERROR_=1 _N_=170
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=W18.31XA
+DIAGNOSIS_NAME=Fall on same level due to stepping on an object, initial encounter PRIMARY_DX_IND=N
+DX_FROM_DATE=10/28/2021 DX_TO_DATE=10/29/2021 ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=W18 Code2=. _ERROR_=1 _N_=172
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S96.912A
+DIAGNOSIS_NAME=Strain of unspecified muscle and tendon at ankle and foot level, left foot, initial
+ encounter PRIMARY_DX_IND=Y DX_FROM_DATE=10/28/2021 DX_TO_DATE=10/29/2021 ID=4993002088
+STUDY_ID=4993002088 BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE
+ETHNICITY=NOT HISPANIC OR LATINO MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022
+Age=56.206492946 Event=0 SurvTime=. DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153
+DEPRIND=0 OSAIND=0 INSIND=0 CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S96 Code2=. _ERROR_=1 _N_=178
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S89.92XA
+DIAGNOSIS_NAME=Unspecified injury of left lower leg, initial encounter PRIMARY_DX_IND=Y
+DX_FROM_DATE=07/25/2020 DX_TO_DATE=07/25/2020 ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S89 Code2=. _ERROR_=1 _N_=220
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=X58.XXXA
+DIAGNOSIS_NAME=Exposure to other specified factors, initial encounter PRIMARY_DX_IND=N
+DX_FROM_DATE=07/25/2020 DX_TO_DATE=07/25/2020 ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=X58 Code2=. _ERROR_=1 _N_=224
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=N DX_FROM_DATE=01/31/2020 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=236
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=01/13/2020 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=245
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=12/23/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=247
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/29/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=248
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/25/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=249
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/21/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=251
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/18/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=252
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/15/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=253
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/11/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=254
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/07/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=255
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/04/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=256
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=11/01/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=257
+NOTE: Invalid argument to function INPUT at line 511 column 9.
+WARNING: Limit set by ERRORS= option reached.  Further errors of this type will not be printed.
+DIAGNOSIS_TYPE=ICD10CM DX_CODE=S83.242D
+DIAGNOSIS_NAME=Other tear of medial meniscus, current injury, left knee, subsequent encounter
+PRIMARY_DX_IND=Y DX_FROM_DATE=10/28/2019 DX_TO_DATE=. ID=4993002088 STUDY_ID=4993002088
+BIRTH_DATE=09JUN1966 DEATH_DATE=. GENDER=MALE RACE=WHITE ETHNICITY=NOT HISPANIC OR LATINO
+MARITAL_STATUS=MARRIED ZIP_CODE=16601 setdate=23AUG2022 Age=56.206492946 Event=0 SurvTime=.
+DXdate1=0 DXdateT=0 firD=21537 finD=22581 YRinter=2.8583749153 DEPRIND=0 OSAIND=0 INSIND=0
+CurrSmoke=0 FormSmoke=0 HypLip=0 Code1=S83 Code2=. _ERROR_=1 _N_=258
+NOTE: Mathematical operations could not be performed at the following places. The results of the
+      operations have been set to missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      631177 at 511:9
+NOTE: There were 32587381 observations read from the data set WORK.ADDINDIAG.
+NOTE: The data set WORK.INPREP has 32587381 observations and 32 variables.
+NOTE: DATA statement used (Total process time):
+      real time           24.25 seconds
+      cpu time            11.46 seconds
+
+
+513
+514  data inPrep2;
+515  set inPrep;
+516  if((Code1="250"
+517  & (Code2~=01|
+518  Code2~=11|
+519  Code2~=21|
+520  Code2~=31|
+521  Code2~=41|
+522  Code2~=51|
+523  Code2~=61|
+524  Code2~=71|
+525  Code2~=81|
+526  Code2~=91|
+527  Code2~=03|
+528  Code2~=13|
+529  Code2~=23|
+530  Code2~=33|
+531  Code2~=43|
+532  Code2~=53|
+533  Code2~=63|
+534  Code2~=73|
+535  Code2~=83|
+536  Code2~=93))
+537  |
+538  Code1="E11"
+539  )
+540  then T2D=1;
+541  else T2D=0;
+542
+543  if(Code1="416" |
+544  (Code1="I27" & Code2=0)|
+545  (Code1="I27" & Code2=2)
+546  )
+547  then PriPulmHT=1;
+548  else PriPulmHT=0;
+549
+550  if(Code1="401"|
+551  Code1="402"|
+552  Code1="403"|
+553  Code1="404"|
+554  Code1="405"|
+555  Code1="I10"|
+556  Code1="I11"|
+557  Code1="I12"|
+558  Code1="I13"|
+559  Code1="I14"|
+560  Code1="I15")
+561  then HT=1;
+562  else HT=0;
+563
+564  if(
+565  (Code1="411"|
+566  Code1="I20")
+567  )
+568  then UnsAng=1;
+569  else UnsAng=0;
+570
+571  if(
+572  (Code1="410"|
+573  Code1="412"|
+574  Code1="I21"|
+575  Code1="I22")
+576  )
+577  then MyocInf=1;
+578  else MyocInf=0;
+579
+580  if(
+581  (Code1="428" |
+582   Code1="I50")
+583  )
+584  then CHF=1;
+585  else CHF=0;
+586
+587  if(
+588  (Code1="430"|
+589  Code1="431"|
+590  Code1="432"|
+591  Code1="433"|
+592  Code1="434"|
+593  Code1="I60"|
+594  Code1="I61"|
+595  Code1="I62"|
+596  Code1="I63"|
+597  Code1="I65"|
+598  Code1="I66")
+599  )
+600  then Stroke=1;
+601  else Stroke=0;
+602
+603  if(
+604  UnsAng=1 |
+605  MyocInf=1|
+606  CHF=1|
+607  Stroke=1
+608  )
+609  then MACE=1;
+610  else MACE=0;
+611  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP.
+NOTE: The data set WORK.INPREP2 has 32587381 observations and 40 variables.
+NOTE: DATA statement used (Total process time):
+      real time           26.28 seconds
+      cpu time            14.62 seconds
+
+
+612
+613  data inprep3;
+614  set inprep2;
+615  if ((INSIND=1) or (OSAIND=1)) then INSorOSA=1;
+616  if ((INSIND=0) and (OSAIND=0)) then INSorOSA=0;
+617  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP2.
+NOTE: The data set WORK.INPREP3 has 32587381 observations and 41 variables.
+NOTE: DATA statement used (Total process time):
+      real time           25.61 seconds
+      cpu time            10.79 seconds
+
+
+618
+619  proc sort data=inprep3;
+620  by ID descending INSorOSA DX_FROM_DATE;
+621  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP3.
+NOTE: The data set WORK.INPREP3 has 32587381 observations and 41 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           1:03.19
+      cpu time            32.43 seconds
+
+
+622  data inprep4;
+623  set inprep3;
+624  by ID;
+625  InsOSA_date1=(first.ID)*DX_FROM_DATE;
+626  if InsOSA_date1=0 then InsOSA_date1=.;
+627  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP3.
+NOTE: The data set WORK.INPREP4 has 32587381 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           27.99 seconds
+      cpu time            11.50 seconds
+
+
+628
+629  data inprep5;
+630  drop temp;
+631  set inprep4;
+632  by ID;
+633  retain temp;
+634  if first.ID then temp=.;
+635  if InsOSA_date1 ~= . then temp=InsOSA_date1;
+636  else if InsOSA_date1=. then InsOSA_date1=temp;
+637  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP4.
+NOTE: The data set WORK.INPREP5 has 32587381 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           24.63 seconds
+      cpu time            12.39 seconds
+
+
+638
+639  proc sort data=inprep5;
+640  by ID descending MACE DX_FROM_DATE;
+641  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP5.
+NOTE: The data set WORK.INPREP5 has 32587381 observations and 42 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           1:07.37
+      cpu time            35.18 seconds
+
+
+642  data inprep6;
+643  set inprep5;
+644  by ID;
+645  MACE_date1=(first.ID)*DX_FROM_DATE;
+646  if MACE_date1=0 then MACE_date1=.;
+647  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP5.
+NOTE: The data set WORK.INPREP6 has 32587381 observations and 43 variables.
+NOTE: DATA statement used (Total process time):
+      real time           29.95 seconds
+      cpu time            12.78 seconds
+
+
+648
+649  data inprep7;
+650  drop temp;
+651  set inprep6;
+652  by ID;
+653  retain temp;
+654  if first.ID then temp=.;
+655  if MACE_date1 ~= . then temp=MACE_date1;
+656  else if MACE_date1=. then MACE_date1=temp;
+657  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP6.
+NOTE: The data set WORK.INPREP7 has 32587381 observations and 43 variables.
+NOTE: DATA statement used (Total process time):
+      real time           29.98 seconds
+      cpu time            12.20 seconds
+
+
+658  data inprep8;
+659  set inprep7;
+660  OSAINS_MACE_time=MACE_date1-InsOSA_date1;
+661  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP7.
+NOTE: The data set WORK.INPREP8 has 32587381 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           29.87 seconds
+      cpu time            11.85 seconds
+
+
+662  PROC IMPORT OUT= WORK.vitals
+663              DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+664  \Desktop\SleepHUB\R3\R3_3583_ENGLISH_VITALS_2022_08_18.csv"
+665              DBMS=CSV REPLACE;
+666       GETNAMES=YES;
+667       DATAROW=2;
+668  RUN;
+
+669   /**********************************************************************
+670   *   PRODUCT:   SAS
+671   *   VERSION:   9.4
+672   *   CREATOR:   External File Interface
+673   *   DATE:      11NOV24
+674   *   DESC:      Generated SAS Datastep Code
+675   *   TEMPLATE SOURCE:  (None Specified.)
+676   ***********************************************************************/
+677      data WORK.VITALS    ;
+678      %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+679      infile 'C:\Users\PWS5\OneDrive - University of
+679! Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_VITALS_2022_08_18.csv' delimiter = ','
+679! MISSOVER DSD lrecl=32767 firstobs=2 ;
+680         informat STUDY_ID $12. ;
+681         informat CONTACT_DATE mmddyy10. ;
+682         informat HEIGHT $2. ;
+683         informat HEIGHT_IN $2. ;
+684         informat WEIGHT best32. ;
+685         informat BMI best32. ;
+686         informat BP_SYSTOLIC best32. ;
+687         informat BP_DIASTOLIC best32. ;
+688         informat BP_POSITION $9. ;
+689         informat PULSE best32. ;
+690         informat TEMPERTURE $7. ;
+691         informat RESPIRATORY_RATE best32. ;
+692         format STUDY_ID $12. ;
+693         format CONTACT_DATE mmddyy10. ;
+694         format HEIGHT $2. ;
+695         format HEIGHT_IN $2. ;
+696         format WEIGHT best12. ;
+697         format BMI best12. ;
+698         format BP_SYSTOLIC best12. ;
+699         format BP_DIASTOLIC best12. ;
+700         format BP_POSITION $9. ;
+701         format PULSE best12. ;
+702         format TEMPERTURE $7. ;
+703         format RESPIRATORY_RATE best12. ;
+704      input
+705                  STUDY_ID  $
+706                  CONTACT_DATE
+707                  HEIGHT  $
+708                  HEIGHT_IN  $
+709                  WEIGHT
+710                  BMI
+711                  BP_SYSTOLIC
+712                  BP_DIASTOLIC
+713                  BP_POSITION  $
+714                  PULSE
+715                  TEMPERTURE  $
+716                  RESPIRATORY_RATE
+717      ;
+718      if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+719      run;
+
+NOTE: The infile 'C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_VITALS_2022_08_18.csv' is:
+
+      Filename=C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_VITALS_2022_08_18.csv,
+      RECFM=V,LRECL=32767,
+      File Size (bytes)=323526174,
+      Last Modified=10Jan2023:15:07:49,
+      Create Time=18Aug2022:12:22:58
+
+NOTE: 4756291 records were read from the infile 'C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_VITALS_2022_08_18.csv'.
+      The minimum record length was 41.
+      The maximum record length was 89.
+NOTE: The data set WORK.VITALS has 4756291 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4.16 seconds
+      cpu time            3.25 seconds
+
+
+4756291 rows created in WORK.VITALS from C:\Users\PWS5\OneDrive - University of
+Pittsburgh\Desktop\SleepHUB\R3\R3_3583_ENGLISH_VITALS_2022_08_18.csv.
+
+
+
+NOTE: WORK.VITALS data set was successfully created.
+NOTE: The data set WORK.VITALS has 4756291 observations and 12 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           4.28 seconds
+      cpu time            3.31 seconds
+
+
+720
+721  data vitalT;
+722  set vitals;
+723  ID=input(STUDY_ID,12.);
+724  run;
+
+NOTE: There were 4756291 observations read from the data set WORK.VITALS.
+NOTE: The data set WORK.VITALT has 4756291 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.61 seconds
+      cpu time            0.61 seconds
+
+
+725  data vitalT;
+726  set vitalT;
+727  drop STUDY_ID;
+728  run;
+
+NOTE: There were 4756291 observations read from the data set WORK.VITALT.
+NOTE: The data set WORK.VITALT has 4756291 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.43 seconds
+      cpu time            0.43 seconds
+
+
+729
+730  proc sort data=vitalT;
+731  by ID CONTACT_DATE;
+732  run;
+
+NOTE: There were 4756291 observations read from the data set WORK.VITALT.
+NOTE: The data set WORK.VITALT has 4756291 observations and 12 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           1.27 seconds
+      cpu time            2.37 seconds
+
+
+733
+734  data vitalb;
+735  set vitalT;
+736  by ID CONTACT_DATE;
+737  recBMI=last.ID;
+738  run;
+
+NOTE: There were 4756291 observations read from the data set WORK.VITALT.
+NOTE: The data set WORK.VITALB has 4756291 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.71 seconds
+      cpu time            0.68 seconds
+
+
+739
+740  data vitalRec;
+741  set vitalb;
+742  if recBMI=1;
+743  run;
+
+NOTE: There were 4756291 observations read from the data set WORK.VITALB.
+NOTE: The data set WORK.VITALREC has 104649 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.31 seconds
+      cpu time            0.23 seconds
+
+
+744
+745  *merge  files;
+746  proc sort data=inPrep8;
+747  by ID;
+748  run;
+
+NOTE: There were 32587381 observations read from the data set WORK.INPREP8.
+NOTE: The data set WORK.INPREP8 has 32587381 observations and 44 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           1:03.98
+      cpu time            32.04 seconds
+
+
+749  proc sort data=vitalRec;
+750  by ID;
+751  run;
+
+NOTE: There were 104649 observations read from the data set WORK.VITALREC.
+NOTE: The data set WORK.VITALREC has 104649 observations and 13 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+
+
+752
+753  data res7;
+754     merge vitalRec (in=in_vital) inPrep8 (in=in_inPrep8);
+755     by ID;
+756     if in_inPrep8=1 & in_vital=1;
+757  run;
+
+NOTE: There were 104649 observations read from the data set WORK.VITALREC.
+NOTE: There were 32587381 observations read from the data set WORK.INPREP8.
+NOTE: The data set WORK.RES7 has 32559815 observations and 56 variables.
+NOTE: DATA statement used (Total process time):
+      real time           26.15 seconds
+      cpu time            14.57 seconds
+
+
+758
+759  PROC IMPORT OUT= WORK.qnr
+760              DATAFILE= "C:\Users\PWS5\OneDrive - University of Pittsburgh
+761  \Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv"
+762              DBMS=CSV REPLACE;
+763       GETNAMES=YES;
+764       DATAROW=2;
+765  RUN;
+
+NOTE: A byte-order mark in the file "C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv" (for
+      fileref "#LN00147") indicates that the data is encoded in "utf-8".  This encoding will be
+      used to process the file.
+NOTE: A byte-order mark in the file "C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv" (for
+      fileref "#LN00148") indicates that the data is encoded in "utf-8".  This encoding will be
+      used to process the file.
+766   /**********************************************************************
+767   *   PRODUCT:   SAS
+768   *   VERSION:   9.4
+769   *   CREATOR:   External File Interface
+770   *   DATE:      11NOV24
+771   *   DESC:      Generated SAS Datastep Code
+772   *   TEMPLATE SOURCE:  (None Specified.)
+773   ***********************************************************************/
+774      data WORK.QNR    ;
+775      %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+776      infile 'C:\Users\PWS5\OneDrive - University of
+776! Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv'
+776! delimiter = ',' MISSOVER DSD lrecl=13106 firstobs=2 ;
+777         informat STUDY_ID best32. ;
+778         informat PAT_ENC_CSN_ID best32. ;
+779         informat CONTACT_DATE mmddyy10. ;
+780         informat ENC_TYPE $12. ;
+781         informat DEPARTMENT_ID best32. ;
+782         informat DEPARTMENT_NAME $22. ;
+783         informat FORM_ID best32. ;
+784         informat FORM_NAME $10. ;
+785         informat QUEST_ID best32. ;
+786         informat QUEST_NAME $41. ;
+787         informat QUESTION $180. ;
+788         informat ANSWER_ID best32. ;
+789         informat ANSWER $20. ;
+790         informat STATUS $9. ;
+791         format STUDY_ID best12. ;
+792         format PAT_ENC_CSN_ID best12. ;
+793         format CONTACT_DATE mmddyy10. ;
+794         format ENC_TYPE $12. ;
+795         format DEPARTMENT_ID best12. ;
+796         format DEPARTMENT_NAME $22. ;
+797         format FORM_ID best12. ;
+798         format FORM_NAME $10. ;
+799         format QUEST_ID best12. ;
+800         format QUEST_NAME $41. ;
+801         format QUESTION $180. ;
+802         format ANSWER_ID best12. ;
+803         format ANSWER $20. ;
+804         format STATUS $9. ;
+805      input
+806                  STUDY_ID
+807                  PAT_ENC_CSN_ID
+808                  CONTACT_DATE
+809                  ENC_TYPE  $
+810                  DEPARTMENT_ID
+811                  DEPARTMENT_NAME  $
+812                  FORM_ID
+813                  FORM_NAME  $
+814                  QUEST_ID
+815                  QUEST_NAME  $
+816                  QUESTION  $
+817                  ANSWER_ID
+818                  ANSWER  $
+819                  STATUS  $
+820      ;
+821      if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+822      run;
+
+NOTE: A byte-order mark in the file "C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv" (for
+      fileref "#LN00149") indicates that the data is encoded in "utf-8".  This encoding will be
+      used to process the file.
+NOTE: The infile 'C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv' is:
+
+      Filename=C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv,
+      RECFM=V,LRECL=52424,File Size (bytes)=82183667,
+      Last Modified=10Jan2023:15:02:51,
+      Create Time=10Jan2023:15:02:50
+
+NOTE: 315862 records were read from the infile 'C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv'.
+      The minimum record length was 138.
+      The maximum record length was 786.
+NOTE: The data set WORK.QNR has 315862 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.96 seconds
+      cpu time            0.54 seconds
+
+
+315862 rows created in WORK.QNR from C:\Users\PWS5\OneDrive - University of
+Pittsburgh\Desktop\SleepHUB\R3\R3_3415_LUYSTER_QNR_DATA_2022_08_18_Study_ID (1).csv.
+
+
+
+NOTE: WORK.QNR data set was successfully created.
+NOTE: The data set WORK.QNR has 315862 observations and 14 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           1.12 seconds
+      cpu time            0.57 seconds
+
+
+823  data qnrESS;
+824  set qnr;
+825  if
+826  (QUEST_NAME=
+827  "EPWORTH SLEEPINESS SCALE (ESS) SCORE");
+828  ID=input(STUDY_ID,12.);
+829  ESS=input(ANSWER,8.);
+830  run;
+
+NOTE: Numeric values have been converted to character values at the places given by:
+      (Line):(Column).
+      828:10
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999959821 PAT_ENC_CSN_ID=354534673 CONTACT_DATE=08/29/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010141 DEPARTMENT_NAME=UNA UNIV CENTER FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=158853792 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999959821 ESS=. _ERROR_=1 _N_=3294
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999532777 PAT_ENC_CSN_ID=347111645 CONTACT_DATE=04/16/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=10554001 DEPARTMENT_NAME=XUNA NORTHSHORE ERIE FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=149001485 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999532777 ESS=. _ERROR_=1 _N_=26071
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999532702 PAT_ENC_CSN_ID=354157339 CONTACT_DATE=05/08/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=10554001 DEPARTMENT_NAME=XUNA NORTHSHORE ERIE FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=150617311 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999532702 ESS=. _ERROR_=1 _N_=26085
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999639746 PAT_ENC_CSN_ID=360325409 CONTACT_DATE=06/14/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010101 DEPARTMENT_NAME=UNA KAUFMANN CLINIC FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=153330573 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999639746 ESS=. _ERROR_=1 _N_=36724
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999612528 PAT_ENC_CSN_ID=358736704 CONTACT_DATE=08/13/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010146 DEPARTMENT_NAME=UNA WEXFORD FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=157631230 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999612528 ESS=. _ERROR_=1 _N_=44567
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999608357 PAT_ENC_CSN_ID=364934043 CONTACT_DATE=07/10/2019 ENC_TYPE=PROCEDURE VI
+DEPARTMENT_ID=1010162 DEPARTMENT_NAME=NEURO MNRVLOXFRD CTR FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=155147258 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999608357 ESS=. _ERROR_=1 _N_=46299
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999858459 PAT_ENC_CSN_ID=368518101 CONTACT_DATE=07/03/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010162 DEPARTMENT_NAME=NEURO MNRVLOXFRD CTR FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=154695588 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999858459 ESS=. _ERROR_=1 _N_=56001
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999399072 PAT_ENC_CSN_ID=315667049 CONTACT_DATE=08/06/2018 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010101 DEPARTMENT_NAME=UNA KAUFMANN CLINIC FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=131119796 ANSWER=Incomplete STATUS=PENDED
+ID=4999399072 ESS=. _ERROR_=1 _N_=74455
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999365004 PAT_ENC_CSN_ID=333861358 CONTACT_DATE=05/06/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010101 DEPARTMENT_NAME=UNA KAUFMANN CLINIC FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=150395076 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999365004 ESS=. _ERROR_=1 _N_=82278
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999363480 PAT_ENC_CSN_ID=368023459 CONTACT_DATE=08/14/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010146 DEPARTMENT_NAME=UNA WEXFORD FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=157684764 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999363480 ESS=. _ERROR_=1 _N_=82613
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999797446 PAT_ENC_CSN_ID=350287839 CONTACT_DATE=04/12/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010141 DEPARTMENT_NAME=UNA UNIV CENTER FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=148779641 ANSWER=Incomplete STATUS=PENDED
+ID=4999797446 ESS=. _ERROR_=1 _N_=99607
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999749778 PAT_ENC_CSN_ID=356551957 CONTACT_DATE=06/20/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010170 DEPARTMENT_NAME=NEURO ST MARGARET FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=153749995 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999749778 ESS=. _ERROR_=1 _N_=101287
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999772946 PAT_ENC_CSN_ID=354191729 CONTACT_DATE=08/19/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010141 DEPARTMENT_NAME=UNA UNIV CENTER FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=158008379 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999772946 ESS=. _ERROR_=1 _N_=115185
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999121300 PAT_ENC_CSN_ID=323987934 CONTACT_DATE=02/21/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010101 DEPARTMENT_NAME=UNA KAUFMANN CLINIC FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=145082079 ANSWER=Incomplete STATUS=PENDED
+ID=4999121300 ESS=. _ERROR_=1 _N_=150999
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999121300 PAT_ENC_CSN_ID=352246254 CONTACT_DATE=04/18/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010101 DEPARTMENT_NAME=UNA KAUFMANN CLINIC FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=149240609 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999121300 ESS=. _ERROR_=1 _N_=151015
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999011236 PAT_ENC_CSN_ID=363893247 CONTACT_DATE=05/24/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010141 DEPARTMENT_NAME=UNA UNIV CENTER FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=151853951 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999011236 ESS=. _ERROR_=1 _N_=170654
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4999011236 PAT_ENC_CSN_ID=368248964 CONTACT_DATE=06/28/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010141 DEPARTMENT_NAME=UNA UNIV CENTER FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=151853951 ANSWER=Incomplete
+STATUS=INCOMPLET ID=4999011236 ESS=. _ERROR_=1 _N_=170655
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4994906468 PAT_ENC_CSN_ID=356707541 CONTACT_DATE=03/29/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010163 DEPARTMENT_NAME=MERCY NEUROLOGY FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=147733840 ANSWER=Incomplete STATUS=PENDED
+ID=4994906468 ESS=. _ERROR_=1 _N_=222806
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+STUDY_ID=4994901963 PAT_ENC_CSN_ID=325912285 CONTACT_DATE=11/13/2018 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010101 DEPARTMENT_NAME=UNA KAUFMANN CLINIC FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=138106481 ANSWER=Incomplete STATUS=PENDED
+ID=4994901963 ESS=. _ERROR_=1 _N_=224025
+NOTE: Invalid argument to function INPUT at line 829 column 5.
+WARNING: Limit set by ERRORS= option reached.  Further errors of this type will not be printed.
+STUDY_ID=4994498458 PAT_ENC_CSN_ID=352642159 CONTACT_DATE=02/26/2019 ENC_TYPE=OFFICE VISIT
+DEPARTMENT_ID=1010163 DEPARTMENT_NAME=MERCY NEUROLOGY FORM_ID=160052318 FORM_NAME=EPWORTH SL
+QUEST_ID=133366 QUEST_NAME=EPWORTH SLEEPINESS SCALE (ESS) SCORE
+QUESTION=Epworth Sleepiness Scale (ESS) Score ANSWER_ID=145382606 ANSWER=Incomplete STATUS=PENDED
+ID=4994498458 ESS=. _ERROR_=1 _N_=227353
+NOTE: Mathematical operations could not be performed at the following places. The results of the
+      operations have been set to missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      34 at 829:5
+NOTE: There were 315862 observations read from the data set WORK.QNR.
+NOTE: The data set WORK.QNRESS has 6275 observations and 16 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.06 seconds
+
+
+831  data qnrEDU;
+832  set qnr;
+833  if
+834  (QUEST_NAME=
+835  "SOCIAL FACTOR EDUCATION");
+836  ID=input(STUDY_ID,12.);
+837  EducLev=ANSWER;
+838  run;
+
+NOTE: Numeric values have been converted to character values at the places given by:
+      (Line):(Column).
+      836:10
+NOTE: There were 315862 observations read from the data set WORK.QNR.
+NOTE: The data set WORK.QNREDU has 1067 observations and 16 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+
+
+839  proc sort data=qnrEDU;
+840  by ID; run;
+
+NOTE: There were 1067 observations read from the data set WORK.QNREDU.
+NOTE: The data set WORK.QNREDU has 1067 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+841  proc sort data=qnrESS;
+842  by ID; run;
+
+NOTE: There were 6275 observations read from the data set WORK.QNRESS.
+NOTE: The data set WORK.QNRESS has 6275 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+843  data qnr1;
+844     merge qnrEDU qnrESS;
+845     by ID;
+846  run;
+
+NOTE: MERGE statement has more than one data set with repeats of BY values.
+NOTE: There were 1067 observations read from the data set WORK.QNREDU.
+NOTE: There were 6275 observations read from the data set WORK.QNRESS.
+NOTE: The data set WORK.QNR1 has 7282 observations and 17 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+847  /*
+848  data qnr2;
+849  set qnr1;
+850  if QUEST_NAME=
+851  "EPWORTH SLEEPINESS SCALE (ESS) SCORE"
+852  then ESS=input(ANSWER,8.);
+853  if QUEST_NAME=
+854  "SOCIAL FACTOR EDUCATION"
+855  then EducLev=ANSWER;
+856  run;
+857  */
+858  data qnr2;
+859  set qnr1;
+860  drop QUEST_NAME QUESTION ANSWER;run;
+
+NOTE: There were 7282 observations read from the data set WORK.QNR1.
+NOTE: The data set WORK.QNR2 has 7282 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+861  proc sort data=qnr2;
+862  by ID CONTACT_DATE;
+863  run;
+
+NOTE: There were 7282 observations read from the data set WORK.QNR2.
+NOTE: The data set WORK.QNR2 has 7282 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+864
+865  data qnr2;
+866  set qnr2;
+867  by ID;
+868  ind1ob=last.ID;
+869  run;
+
+NOTE: There were 7282 observations read from the data set WORK.QNR2.
+NOTE: The data set WORK.QNR2 has 7282 observations and 15 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+870
+871  data qnr3;
+872  set qnr2;
+873  drop DEPARTMENT_ID ENC_TYPE;
+874  if ind1ob=1 then ESSrec=ESS;
+875  run;
+
+NOTE: There were 7282 observations read from the data set WORK.QNR2.
+NOTE: The data set WORK.QNR3 has 7282 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+876  proc sort data=qnr3;
+877  by ID descending CONTACT_DATE descending ind1ob;
+878  run;
+
+NOTE: There were 7282 observations read from the data set WORK.QNR3.
+NOTE: The data set WORK.QNR3 has 7282 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+879
+880  data qnr4;
+881    drop temp;
+882    set qnr3;
+883    by ID;
+884    /* RETAIN the new variable */
+885    retain temp;
+886    /* Reset TEMP when the BY-Group changes */
+887    if first.ID then temp=.;
+888    /* Assign TEMP when X is non-missing */
+889    if ESSrec ~= . then temp=ESSrec;
+890    /* When X is missing, assign the retained value of TEMP into X */
+891    else if ESSrec=. then ESSrec=temp;
+892  run;
+
+NOTE: There were 7282 observations read from the data set WORK.QNR3.
+NOTE: The data set WORK.QNR4 has 7282 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+893  *merge  files;
+894  proc sort data=qnr4;
+895  by ID;
+896  run;
+
+NOTE: There were 7282 observations read from the data set WORK.QNR4.
+NOTE: The data set WORK.QNR4 has 7282 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+897  proc sort data=res7;
+898  by ID;
+899  run;
+
+NOTE: There were 32559815 observations read from the data set WORK.RES7.
+NOTE: The data set WORK.RES7 has 32559815 observations and 56 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           1:14.77
+      cpu time            36.53 seconds
+
+
+900
+901  data res8;
+902     merge qnr4 (in=in_qnr) res7 (in=in_res7);
+903     by ID;
+904     if in_res7=1 & in_qnr=1;
+905  run;
+
+NOTE: MERGE statement has more than one data set with repeats of BY values.
+NOTE: There were 7282 observations read from the data set WORK.QNR4.
+NOTE: There were 32559815 observations read from the data set WORK.RES7.
+NOTE: The data set WORK.RES8 has 2193542 observations and 67 variables.
+NOTE: DATA statement used (Total process time):
+      real time           16.82 seconds
+      cpu time            8.07 seconds
+
+
+906
+907
+908  *working set;
+909  proc summary data=res8 noprint
+910  MAX MEAN;
+911  by ID;
+912  output OUT=numagg mean= max=/autoname;
+913  var
+914  ESS ESSrec BMI
+915  Age Event SurvTime YRinter
+916  DEPRIND OSAIND INSIND CurrSmoke FormSmoke
+917  HypLip T2D PriPulmHT HT
+918  UnsAng MyocInf CHF Stroke MACE
+919  InsOSA_date1 MACE_date1 OSAINS_MACE_time;
+920  RUN;
+
+NOTE: There were 2193542 observations read from the data set WORK.RES8.
+NOTE: The data set WORK.NUMAGG has 3951 observations and 51 variables.
+NOTE: PROCEDURE SUMMARY used (Total process time):
+      real time           2.78 seconds
+      cpu time            2.76 seconds
+
+
+921  proc sort data=res8;
+922  by ID CONTACT_DATE;
+923  RUN;
+
+NOTE: There were 2193542 observations read from the data set WORK.RES8.
+NOTE: The data set WORK.RES8 has 2193542 observations and 67 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           2.15 seconds
+      cpu time            3.48 seconds
+
+
+924  data nomstr1;
+925  set res8;
+926  by ID;
+927  recRec=last.ID;
+928  if recRec=1 ;
+929  keep ID EducLev GENDER RACE ETHNICITY MARITAL_STATUS;
+930  run;
+
+NOTE: There were 2193542 observations read from the data set WORK.RES8.
+NOTE: The data set WORK.NOMSTR1 has 3951 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.49 seconds
+      cpu time            0.50 seconds
+
+
+931
+932  proc sort data=numagg;
+933  by ID; run;
+
+NOTE: There were 3951 observations read from the data set WORK.NUMAGG.
+NOTE: The data set WORK.NUMAGG has 3951 observations and 51 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+934  proc sort data=nomstr1;
+935  by ID; run;
+
+NOTE: There were 3951 observations read from the data set WORK.NOMSTR1.
+NOTE: The data set WORK.NOMSTR1 has 3951 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+936
+937  data workset;
+938  merge numagg nomstr1;
+939  by ID; run;
+
+NOTE: There were 3951 observations read from the data set WORK.NUMAGG.
+NOTE: There were 3951 observations read from the data set WORK.NOMSTR1.
+NOTE: The data set WORK.WORKSET has 3951 observations and 56 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+940  proc format library=work;
+941  value disg
+942  1='OSA only'
+943  2='Insomnia only'
+944  3='COMISA'
+945  4='Control';
+NOTE: Format DISG has been output.
+946  run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+
+
+947  data workReady;
+948  set workset;
+949  if (OSAIND_Max=1 & INSIND_Max=0) then DisGroup=1;
+950  if (OSAIND_Max=0 & INSIND_Max=1) then DisGroup=2;
+951  if (OSAIND_Max=1 & INSIND_Max=1) then DisGroup=3;
+952  if (OSAIND_Max=0 & INSIND_Max=0) then DisGroup=4;
+953  OSAINStoMACE=OSAINS_MACE_time_Max;
+954  if OSAINStoMACE=<0 then OSAINStoMACE=.;
+955  if (MACE_Max=0) then OSAINStoMACE=YRinter_Max*365.2425;
+956  format DisGroup disg.;
+957  run;
+
+NOTE: There were 3951 observations read from the data set WORK.WORKSET.
+NOTE: The data set WORK.WORKREADY has 3951 observations and 58 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+958
+959  proc means data=workready;
+960  class DisGroup MACE_Max;
+961  var
+962  OSAINStoMACE;
+963  run;
+
+NOTE: There were 3951 observations read from the data set WORK.WORKREADY.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.20 seconds
+      cpu time            0.03 seconds
+
+
+964
+965  proc freq data=workready;
+966  table DisGroup*MACE_Max;
+967  run;
+
+NOTE: There were 3951 observations read from the data set WORK.WORKREADY.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+
+
+968
+969  data workready;
+970  set workready;
+971  if SurvTime_Max=. then ST=Age_Max;
+972  else ST=SurvTime_Max;
+973  run;
+
+NOTE: There were 3951 observations read from the data set WORK.WORKREADY.
+NOTE: The data set WORK.WORKREADY has 3951 observations and 59 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+974  ods pdf close;
+NOTE: ODS PDF printed 3 pages to C:\Users\PWS5\OneDrive - University of
+      Pittsburgh\Desktop\SleepHUB\R3\logDataBuild.pdf.
