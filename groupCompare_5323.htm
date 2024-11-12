@@ -1,0 +1,6784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>SAS Output</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Class Levels">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Class Level Information</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Class</th>
+<th class="r b header" scope="col">Levels</th>
+<th class="l b header" scope="col">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">4</td>
+<td class="l data">COMISA Control Insomnia only OSA only</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX1"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Number of Observations">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Number of Observations Read</th>
+<td class="r data">3951</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Number of Observations Used</th>
+<td class="r data">3951</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX2"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<div class="c proctitle">&nbsp;</div>
+<div class="c proctitle">Dependent Variable: Age_Max   </div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Overall ANOVA">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Sum of Squares</th>
+<th class="r b header" scope="col">Mean Square</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Model</th>
+<td class="r data">3</td>
+<td class="r data">68562.6455</td>
+<td class="r data">22854.2152</td>
+<td class="r data">107.39</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error</th>
+<td class="r data">3947</td>
+<td class="r data">840019.4069</td>
+<td class="r data">212.8248</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Corrected Total</th>
+<td class="r data">3950</td>
+<td class="r data">908582.0524</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX3"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Fit Statistics">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">R-Square</th>
+<th class="r b header" scope="col">Coeff Var</th>
+<th class="r b header" scope="col">Root MSE</th>
+<th class="r b header" scope="col">Age_Max&nbsp;Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.075461</td>
+<td class="r data">24.62050</td>
+<td class="r data">14.58852</td>
+<td class="r data">59.25352</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX4"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Anova Model ANOVA">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Anova SS</th>
+<th class="r b header" scope="col">Mean Square</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">3</td>
+<td class="r data">68562.64546</td>
+<td class="r data">22854.21515</td>
+<td class="r data">107.39</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX5"></a>
+<div>
+<div  class="c">
+<img alt="Distribution of Age_Max by DisGroup" src="C:\Users\PWS5\AppData\Local\Temp\SAS Temporary Files\_TD29388_CRE360CA_\BoxPlot9.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX6"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Levene&apos;s HoV Test">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Levene&#39;s Test for Homogeneity of Age_Max Variance<br/>ANOVA of Squared Deviations from Group Means</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Sum of Squares</th>
+<th class="r b header" scope="col">Mean Square</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">3</td>
+<td class="r data">1121432</td>
+<td class="r data">373811</td>
+<td class="r data">5.36</td>
+<td class="r data">0.0011</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error</th>
+<td class="r data">3947</td>
+<td class="r data">2.7531E8</td>
+<td class="r data">69752.2</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX7"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Welch&apos;s ANOVA">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Welch&#39;s ANOVA for Age_Max</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">3.0000</td>
+<td class="r data">94.05</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error</th>
+<td class="r data">652.8</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX8"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<p>
+<div>
+<div  class="c">
+<img alt="Distribution of Age_Max by DisGroup" src="C:\Users\PWS5\AppData\Local\Temp\SAS Temporary Files\_TD29388_CRE360CA_\BoxPlot11.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX9"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<div class="c proctitle">&nbsp;</div>
+<div class="c proctitle">Bonferroni t Confidence Intervals for Age_Max</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Information">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Alpha</th>
+<td class="r data">0.05</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error Degrees of Freedom</th>
+<td class="r data">3947</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error Mean Square</th>
+<td class="r data">212.8248</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Critical Value of t</th>
+<td class="r data">2.49885</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX10"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Confidence Intervals">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">DisGroup</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="c b header" colspan="2" scope="colgroup">Simultaneous 95% Confidence<br/>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">OSA only</th>
+<td class="r data">2107</td>
+<td class="r data">60.9388</td>
+<td class="r data">60.1446</td>
+<td class="r data">61.7329</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">COMISA</th>
+<td class="r data">1342</td>
+<td class="r data">60.6337</td>
+<td class="r data">59.6386</td>
+<td class="r data">61.6288</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Insomnia only</th>
+<td class="r data">276</td>
+<td class="r data">50.2375</td>
+<td class="r data">48.0432</td>
+<td class="r data">52.4318</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Control</th>
+<td class="r data">226</td>
+<td class="r data">46.3573</td>
+<td class="r data">43.9324</td>
+<td class="r data">48.7822</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX11"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Class Levels">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Class Level Information</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Class</th>
+<th class="r b header" scope="col">Levels</th>
+<th class="l b header" scope="col">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">4</td>
+<td class="l data">COMISA Control Insomnia only OSA only</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX12"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Number of Observations">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Number of Observations Read</th>
+<td class="r data">3951</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Number of Observations Used</th>
+<td class="r data">3654</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX13"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<div class="c proctitle">&nbsp;</div>
+<div class="c proctitle">Dependent Variable: BMI_Max   </div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Overall ANOVA">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Sum of Squares</th>
+<th class="r b header" scope="col">Mean Square</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Model</th>
+<td class="r data">3</td>
+<td class="r data">9203.3285</td>
+<td class="r data">3067.7762</td>
+<td class="r data">48.57</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error</th>
+<td class="r data">3650</td>
+<td class="r data">230529.3627</td>
+<td class="r data">63.1587</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Corrected Total</th>
+<td class="r data">3653</td>
+<td class="r data">239732.6912</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX14"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Fit Statistics">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">R-Square</th>
+<th class="r b header" scope="col">Coeff Var</th>
+<th class="r b header" scope="col">Root MSE</th>
+<th class="r b header" scope="col">BMI_Max&nbsp;Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.038390</td>
+<td class="r data">23.76898</td>
+<td class="r data">7.947247</td>
+<td class="r data">33.43537</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX15"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Anova Model ANOVA">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Anova SS</th>
+<th class="r b header" scope="col">Mean Square</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">3</td>
+<td class="r data">9203.328519</td>
+<td class="r data">3067.776173</td>
+<td class="r data">48.57</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX16"></a>
+<div>
+<div  class="c">
+<img alt="Distribution of BMI_Max by DisGroup" src="C:\Users\PWS5\AppData\Local\Temp\SAS Temporary Files\_TD29388_CRE360CA_\BoxPlot13.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX17"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Levene&apos;s HoV Test">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Levene&#39;s Test for Homogeneity of BMI_Max Variance<br/>ANOVA of Squared Deviations from Group Means</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Sum of Squares</th>
+<th class="r b header" scope="col">Mean Square</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">3</td>
+<td class="r data">123856</td>
+<td class="r data">41285.4</td>
+<td class="r data">2.53</td>
+<td class="r data">0.0552</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error</th>
+<td class="r data">3650</td>
+<td class="r data">59464705</td>
+<td class="r data">16291.7</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX18"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Welch&apos;s ANOVA">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Welch&#39;s ANOVA for BMI_Max</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Source</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">DisGroup</th>
+<td class="r data">3.0000</td>
+<td class="r data">60.67</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error</th>
+<td class="r data">639.6</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX19"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<p>
+<div>
+<div  class="c">
+<img alt="Distribution of BMI_Max by DisGroup" src="C:\Users\PWS5\AppData\Local\Temp\SAS Temporary Files\_TD29388_CRE360CA_\BoxPlot15.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX20"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The ANOVA Procedure</div>
+<div class="c proctitle">&nbsp;</div>
+<div class="c proctitle">Bonferroni t Confidence Intervals for BMI_Max</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Information">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Alpha</th>
+<td class="r data">0.05</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error Degrees of Freedom</th>
+<td class="r data">3650</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Error Mean Square</th>
+<td class="r data">63.15873</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Critical Value of t</th>
+<td class="r data">2.49894</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX21"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure ANOVA: Confidence Intervals">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">DisGroup</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="c b header" colspan="2" scope="colgroup">Simultaneous 95% Confidence<br/>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">OSA only</th>
+<td class="r data">1947</td>
+<td class="r data">34.3992</td>
+<td class="r data">33.9491</td>
+<td class="r data">34.8493</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">COMISA</th>
+<td class="r data">1237</td>
+<td class="r data">33.4145</td>
+<td class="r data">32.8498</td>
+<td class="r data">33.9791</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Control</th>
+<td class="r data">211</td>
+<td class="r data">30.0260</td>
+<td class="r data">28.6588</td>
+<td class="r data">31.3932</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Insomnia only</th>
+<td class="r data">259</td>
+<td class="r data">29.0674</td>
+<td class="r data">27.8334</td>
+<td class="r data">30.3014</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX22"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The MEANS Procedure</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Means: Summary statistics">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">DisGroup</th>
+<th class="r b header" scope="col">N Obs</th>
+<th class="l b header" scope="col">Variable</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t data">OSA only</th>
+<th class="r t data">2107</th>
+<th class="l stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l data top_stacked_value">BMI_Max</th>
+</tr>
+<tr>
+<th class="l data bottom_stacked_value">Age_Max</th>
+</tr>
+</table></th>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">1947</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">2107</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">34.3991782</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">60.9387592</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">8.0788111</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">14.4752431</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">14.6300000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">22.6698700</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">90.2000000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">95.5721199</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t data">Insomnia only</th>
+<th class="r t data">276</th>
+<th class="l stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l data top_stacked_value">BMI_Max</th>
+</tr>
+<tr>
+<th class="l data bottom_stacked_value">Age_Max</th>
+</tr>
+</table></th>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">259</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">276</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">29.0673745</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">50.2375085</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">6.5191163</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">16.4011936</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">16.4600000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">21.8676633</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">59.8600000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">96.0758948</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t data">COMISA</th>
+<th class="r t data">1342</th>
+<th class="l stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l data top_stacked_value">BMI_Max</th>
+</tr>
+<tr>
+<th class="l data bottom_stacked_value">Age_Max</th>
+</tr>
+</table></th>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">1237</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">1342</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">33.4144867</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">60.6336804</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">8.0309665</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">14.2329476</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">3.0100000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">22.6342772</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">66.0000000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">102.6578232</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t data">Control</th>
+<th class="r t data">226</th>
+<th class="l stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l data top_stacked_value">BMI_Max</th>
+</tr>
+<tr>
+<th class="l data bottom_stacked_value">Age_Max</th>
+</tr>
+</table></th>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">211</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">226</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">30.0260095</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">46.3572723</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">7.8185144</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">15.3642254</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">12.0600000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">20.8245207</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">61.3300000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">93.3051329</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX23"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The FREQ Procedure</div>
+<p>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;GENDER</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">GENDER(GENDER)</th>
+</tr>
+<tr>
+<th class="r header" scope="col">FEMALE</th>
+<th class="r header" scope="col">MALE</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">995</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-143</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">17.975</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">25.18</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">47.22</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1112</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">143.03</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">21.111</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">28.14</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">52.78</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">195</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">45.928</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">14.15</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.94</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">70.65</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">81</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-45.93</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">16.619</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.05</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">29.35</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">785</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">60.164</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.9938</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">19.87</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">58.49</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">557</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-60.16</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.865</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">14.10</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">41.51</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">159</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">36.934</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">11.175</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.02</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">70.35</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">67</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-36.93</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">13.125</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.70</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">29.65</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2134</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">54.01</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1817</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">45.99</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by GENDER</td></tr></table>
+</div><p>
+<a name="IDX24"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">105.0136</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">107.0514</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">71.3812</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1630</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1609</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1630</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX25"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="5" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;RacEth3</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="4" scope="colgroup">RacEth3</th>
+</tr>
+<tr>
+<th class="r header" scope="col">WHITE,NON-HISP</th>
+<th class="r header" scope="col">BLACK,NON-HISP</th>
+<th class="r header" scope="col">Other</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1762</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.7669</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.0081</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">44.60</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">83.63</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">201</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.6854</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.0688</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.09</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">9.54</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">144</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-7.452</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.3667</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.64</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">6.83</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">236</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.6856</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.1404</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">85.51</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">16</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-9.847</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.7512</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.40</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">5.80</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">24</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.161</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.8727</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.61</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">8.70</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1124</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.1382</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.0153</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">28.45</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">83.76</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">129</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.3255</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.088</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.26</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">9.61</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">89</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-7.464</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.5775</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.25</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">6.63</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">175</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-13.59</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.9794</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.43</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">77.43</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">24</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.8357</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.38</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.61</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">10.62</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">27</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">10.755</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">7.1203</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.68</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">11.95</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3297</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">83.45</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">370</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">9.36</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">284</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">7.19</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by RacEth3</td></tr></table>
+</div><p>
+<a name="IDX26"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">6</td>
+<td class="r data">14.3684</td>
+<td class="r data">0.0258</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">6</td>
+<td class="r data">13.7404</td>
+<td class="r data">0.0327</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">1.6596</td>
+<td class="r data">0.1977</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0603</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0602</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0426</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX27"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="6" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;PARTNERED</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="5" scope="colgroup">PARTNERED</th>
+</tr>
+<tr>
+<th class="r header" scope="col">MARRIED OR COUPLED</th>
+<th class="r header" scope="col">SEPARATED,DIVORCED,WIDOWED</th>
+<th class="r header" scope="col">SINGLE</th>
+<th class="r header" scope="col">OTHER OR UNKNOWN</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1292</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">117.71</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">11.799</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">32.70</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">61.32</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">284</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-23.7</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.8261</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">7.19</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">13.48</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">504</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-92.74</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">14.414</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">12.76</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">23.92</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">27</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-1.264</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.0565</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.68</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">1.28</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">113</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-40.82</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">10.834</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.86</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">40.94</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">38</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-2.307</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.132</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.96</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">13.77</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">121</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">42.831</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">23.469</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.06</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">43.84</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">4</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.2976</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.0239</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.10</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">1.45</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">700</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-47.93</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.0719</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">17.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">52.16</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">238</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">42.016</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">9.0074</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.02</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">17.73</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">393</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">12.92</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.4392</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">9.95</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">29.28</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">11</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-7.002</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.7235</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.28</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">0.82</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">97</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-28.96</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.6567</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.46</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">42.92</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">17</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-16</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">7.7611</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.43</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">7.52</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">101</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">36.992</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">21.379</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.56</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">44.69</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">11</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">7.9684</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">20.944</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.28</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">4.87</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2202</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">55.73</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">577</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">14.60</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1119</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">28.32</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">53</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">1.34</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by PARTNERED</td></tr></table>
+</div><p>
+<a name="IDX28"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">9</td>
+<td class="r data">134.5376</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">9</td>
+<td class="r data">123.1766</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">49.7534</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1845</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1815</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1065</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX29"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;CurrSmoke_Max</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">CurrSmoke_Max</th>
+</tr>
+<tr>
+<th class="r header" scope="col">           0</th>
+<th class="r header" scope="col">           1</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1731</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">26.628</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.416</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">43.81</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">82.15</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">376</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-26.63</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.7611</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">9.52</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">17.85</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">215</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-8.259</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.3055</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.44</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">77.90</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">61</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.2589</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.2933</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.54</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">22.10</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1048</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-37.56</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.2993</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">26.52</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">78.09</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">294</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">37.556</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.5001</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">7.44</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">21.91</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">202</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">19.187</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.0137</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.11</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">89.38</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">24</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-19.19</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.524</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.61</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">10.62</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3196</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">80.89</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">755</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">19.11</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by CurrSmoke_Max</td></tr></table>
+</div><p>
+<a name="IDX30"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">21.1130</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">22.4403</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">0.9956</td>
+<td class="r data">0.3184</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0731</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0729</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0731</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX31"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;FormSmoke_Max</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">FormSmoke_Max</th>
+</tr>
+<tr>
+<th class="r header" scope="col">           0</th>
+<th class="r header" scope="col">           1</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1406</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">23.198</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.3892</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">35.59</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">66.73</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">701</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-23.2</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.7431</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">17.74</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">33.27</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">206</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">24.864</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.413</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.21</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">74.64</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">70</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-24.86</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.5169</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.77</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">25.36</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">794</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-86.74</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.5427</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">20.10</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">59.17</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">548</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">86.741</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">16.312</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">13.87</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">40.83</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">187</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">38.679</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">10.086</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.73</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">82.74</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">39</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-38.68</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">19.259</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">17.26</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2593</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">65.63</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1358</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">34.37</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by FormSmoke_Max</td></tr></table>
+</div><p>
+<a name="IDX32"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">65.2623</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">68.7161</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">1.0870</td>
+<td class="r data">0.2971</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1285</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1275</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1285</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX33"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;HypLip_Max</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">HypLip_Max</th>
+</tr>
+<tr>
+<th class="r header" scope="col">         0</th>
+<th class="r header" scope="col">         1</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">564</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-62.07</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.1545</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">14.27</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">26.77</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1543</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">62.074</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.6019</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">39.05</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">73.23</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">134</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">51.989</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">32.958</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.39</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">48.55</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">142</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-51.99</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">13.933</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.59</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">51.45</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">327</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-71.76</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">12.914</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.28</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">24.37</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1015</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">71.762</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.4597</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">25.69</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">75.63</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">149</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">81.846</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">99.754</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.77</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">65.93</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">77</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-81.85</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">42.172</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.95</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">34.07</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1174</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">29.71</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2777</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">70.29</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by HypLip_Max</td></tr></table>
+</div><p>
+<a name="IDX34"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">215.9470</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">196.9915</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">26.2314</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2338</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2276</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2338</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX35"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;T2D_Max</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">T2D_Max</th>
+</tr>
+<tr>
+<th class="r header" scope="col">      0</th>
+<th class="r header" scope="col">      1</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1365</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-34.33</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.8424</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">34.55</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">64.78</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">742</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">34.334</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">1.6658</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">18.78</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">35.22</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">244</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">60.699</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">20.1</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.18</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">88.41</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">32</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-60.7</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">39.745</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.81</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">11.59</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">816</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-75.27</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.3568</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">20.65</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">60.80</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">526</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">75.27</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">12.57</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">13.31</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">39.20</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">199</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">48.905</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">15.935</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.04</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">88.05</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">27</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-48.91</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">31.509</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.68</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">11.95</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2624</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">66.41</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1327</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">33.59</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by T2D_Max</td></tr></table>
+</div><p>
+<a name="IDX36"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">128.7238</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">148.9042</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">3.3496</td>
+<td class="r data">0.0672</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1805</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1776</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1805</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX37"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;PriPulmHT_Max</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">PriPulmHT_Max</th>
+</tr>
+<tr>
+<th class="r header" scope="col">           0</th>
+<th class="r header" scope="col">           1</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2001</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.7897</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.0039</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">50.65</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">94.97</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">106</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-2.79</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.0715</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.68</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">5.03</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">270</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.2506</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.2601</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.83</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">97.83</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">6</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-8.251</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.7768</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.15</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">2.17</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1253</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-19.71</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.3052</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">31.71</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">93.37</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">89</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">19.709</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.6061</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.25</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">6.63</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">223</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.6689</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.3506</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.64</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">98.67</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-8.669</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.4402</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">0.08</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">1.33</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3747</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">94.84</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">204</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">5.16</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by PriPulmHT_Max</td></tr></table>
+</div><p>
+<a name="IDX38"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">17.8145</td>
+<td class="r data">0.0005</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">21.4342</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">0.1256</td>
+<td class="r data">0.7230</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0671</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0670</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.0671</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX39"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;HT_Max</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">HT_Max</th>
+</tr>
+<tr>
+<th class="r header" scope="col">     0</th>
+<th class="r header" scope="col">     1</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">534</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-70.21</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.1583</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">13.52</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">25.34</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1573</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">70.209</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.2801</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">39.81</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">74.66</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">147</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">67.853</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">58.172</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">53.26</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">129</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-67.85</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">23.388</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.26</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">46.74</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">320</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-64.84</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">10.923</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.10</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">23.85</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1022</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">64.836</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.3918</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">25.87</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">76.15</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">132</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">67.192</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">69.662</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.34</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">58.41</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">94</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-67.19</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">28.008</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.38</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">41.59</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1133</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">28.68</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2818</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">71.32</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by HT_Max</td></tr></table>
+</div><p>
+<a name="IDX40"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">205.9845</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">187.0087</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">22.0583</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2283</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2226</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2283</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+<a name="IDX41"></a>
+<div>
+<div align="center">
+<table  summary="Page Layout"><tr>
+<td class="c t"><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+</colgroup>
+<tbody>
+<tr>
+<th class="l t stacked_cell header" scope="col"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l t header top_stacked_value" scope="col">Frequency</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Deviation</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Cell Chi-Square</th>
+</tr>
+<tr>
+<th class="l t header middle_stacked_value" scope="col">Percent</th>
+</tr>
+<tr>
+<th class="l t header bottom_stacked_value" scope="col">Row Pct</th>
+</tr>
+</table></th>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td><div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Cross-Tabular Freq Table">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="4" scope="colgroup">Table&nbsp;of&nbsp;DisGroup&nbsp;by&nbsp;DEPRIND_Max</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">DisGroup</th>
+<th class="c b header" colspan="3" scope="colgroup">DEPRIND_Max</th>
+</tr>
+<tr>
+<th class="r header" scope="col">          0</th>
+<th class="r header" scope="col">          1</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l t rowheader" scope="row">OSA only     </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">949</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">175.21</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">39.671</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">24.02</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">45.04</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1158</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-175.2</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">23.025</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">29.31</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">54.96</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2107</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">53.33</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Insomnia only</th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">80</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-21.36</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.5015</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.02</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">28.99</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">196</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">21.361</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.6127</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">4.96</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">71.01</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">276</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.99</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">COMISA       </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">316</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-176.8</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">63.458</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">8.00</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">23.55</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1026</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">176.85</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">36.831</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">25.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">76.45</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1342</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">33.97</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Control      </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">106</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">23.002</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">6.3746</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">2.68</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">46.90</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">120</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value" nowrap>-23</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.6998</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">3.04</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">53.10</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">226</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">&nbsp;</td>
+</tr>
+<tr>
+<td class="r t data middle_stacked_value">5.72</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<th class="l t rowheader" scope="row">Total        </th>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">1451</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">36.72</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">2500</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">63.28</td>
+</tr>
+</table></td>
+<td class="r t stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r t data top_stacked_value">3951</td>
+</tr>
+<tr>
+<td class="r t data bottom_stacked_value">100.00</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Statistics for Table of DisGroup by DEPRIND_Max</td></tr></table>
+</div><p>
+<a name="IDX42"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Freq: Chi-Square Tests">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">180.1744</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">3</td>
+<td class="r data">185.5312</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">93.1058</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2135</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2088</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Cramer&#39;s V</th>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.2135</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<p>
+<div align="center"><table class="proctitle"><tr><td class="c proctitle">Sample Size = 3951</td></tr></table>
+</div><p>
+</div>
+</body>
+</html>
